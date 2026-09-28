@@ -30,12 +30,12 @@ def all_tasks(status: str = None):
     if status == "Completed":
         new_db = []
         for item in db:
-            if item.completed == True:
+            if item.get("completed") == True:
                 new_db.append(item)
     if status == "Pending":
         new_db = []
         for item in db:
-            if item.completed == False:
+            if item.get("completed") == False:
                 new_db.append(item)
 
     return db if status == None else new_db
